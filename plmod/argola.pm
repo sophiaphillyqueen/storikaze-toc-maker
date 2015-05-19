@@ -4,9 +4,11 @@ use strict;
 my @argbuft;
 my @argbufp;
 my $versono;
+my $resorco;
 
 @argbuft = @ARGV;
 $versono = &getrg;
+$resorco = &getrg;
 @argbufp = @argbuft;
 
 
@@ -25,6 +27,9 @@ sub rset {
 
 sub vrsn {
   return $versono;
+}
+sub srcd {
+  return $resorco;
 }
 
 sub yet {

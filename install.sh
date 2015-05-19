@@ -8,7 +8,7 @@ rm -rf tmp
 mkdir -p tmp
 (
   echo "#! $(which perl)"
-  use strict;
+  echo "use strict;"
   echo "my \$resloc = \"${curdirec}\";"
   echo "# line 1 \"${curdirec}/outer-wrap.qpl-then\""
   cat outer-wrap.qpl
