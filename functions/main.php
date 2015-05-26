@@ -1,6 +1,9 @@
 <?php
 
 
+require_once(dirname(__FILE__) . "/f_time_adjust_set.php");
+
+
 function so_in($la,$ti,$da) {
   // Let us set the immediate clear if we are entering an ITEM field:
   if ( $ti == "ITEM" )
@@ -86,51 +89,10 @@ function condapnos ( $varos, $contos ) {
 
 // -----
 
+require_once(dirname(__FILE__) . "/f_process_item.php");
+require_once(dirname(__FILE__) . "/f_extract_info.php");
 
 
-function process_item ( ) {
-  if ( $GLOBALS["viar"]["status"]["cont"] == "trash" ) { return; }
-  if ( $GLOBALS["viar"]["posttype"]["cont"] != "post" ) { return; }
-  echo "\n------------------------------------------------------------------\n";
-  echo $GLOBALS["viar"]["title"]["cont"] . "\n";
-  echo $GLOBALS["viar"]["link"]["cont"] . "\n";
-  echo $GLOBALS["viar"]["postdate"]["cont"] . "\n";
-  echo $GLOBALS["viar"]["status"]["cont"] . "\n";
-  
-  $conto = $GLOBALS["viar"]["content"]["cont"];
-  $inform = extract_info($conto);
-  #echo $inform . "\n";
-  $infolins = explode("\n",$inform);
-  $infotitle = array();
-  foreach ( $infolins as $infoline )
-  {
-    $infoslins = explode("\r",$infoline);
-    foreach ( $infoslins as $infosline )
-    {
-      $infosegs = explode(":",$infosline,4);
-      if ( $infosegs[0] == "level" )
-      {
-        if ( $infosegs[3] )
-        {
-          $infotitle["l:" . $infosegs[1]] = $infosegs[3];
-        }
-      }
-    }
-  }
-}
-
-function extract_info ( $conto ) {
-  $reto = "";
-  $lefto = $conto;
-  while ( $lefto != "" )
-  {
-    $splito = explode("[storikaze_info]",("x" . $lefto),2);
-    $gaino = explode("[/storikaze_info]",$splito[1],2);
-    $reto .= $gaino[0] . "\n";
-    $lefto = $gaino[1];
-  }
-  return $reto;
-}
 
 
 ?>
