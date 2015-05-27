@@ -33,6 +33,17 @@ $segmenmean = array(
   "WP:STATUS" => "status",
   "WP:POST_DATE" => "postdate"
 );
+
+// The following array contains flow data for knowing where
+// we are in procesing various entities within the XML output.
 $viar = array();
+
+
+$cont_levels = array(
+  array("Episode",1),
+  array("Chapter",1),
+  array("Part",1),
+  array("Volume",1)
+);
 
 ?>

@@ -2,6 +2,8 @@
 
 
 require_once(dirname(__FILE__) . "/f_time_adjust_set.php");
+require_once(dirname(__FILE__) . "/f_acknowledge.php");
+require_once(dirname(__FILE__) . "/f_eachlevelcont.php");
 
 
 function so_in($la,$ti,$da) {

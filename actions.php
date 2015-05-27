@@ -1,6 +1,9 @@
 <?php
 
 
+$cont_max_level = count($cont_levels);
+
+$cont_table = array();
 
 
 
@@ -28,6 +31,14 @@ while ( $data = fread($infile,4096) ) {
 
 
 fclose($infile);
+
+
+
+
+
+
+
+echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
 
 
 ?>
