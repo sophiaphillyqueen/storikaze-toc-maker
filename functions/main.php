@@ -12,12 +12,18 @@ require_once(dirname(__FILE__) . "/f_switch_on.php");
 require_once(dirname(__FILE__) . "/f_switch_off.php");
 require_once(dirname(__FILE__) . "/f_condapnos.php");
 
+require_once(dirname(__FILE__) . "/f_form_volume.php");
+require_once(dirname(__FILE__) . "/f_form_part.php");
+require_once(dirname(__FILE__) . "/f_form_chapter.php");
+require_once(dirname(__FILE__) . "/f_form_episode.php");
+
 // -----
 
 require_once(dirname(__FILE__) . "/f_process_item.php");
 require_once(dirname(__FILE__) . "/f_extract_info.php");
 
 
+require_once(dirname(__FILE__) . "/f_romanica.php");
 
 
 ?>

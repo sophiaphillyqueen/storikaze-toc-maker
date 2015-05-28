@@ -43,7 +43,7 @@ fclose($infile);
 $alltimes = array();
 
 
-
+$dispdata = array();
 echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
 
 echo "<p>Check back for the next installment in [storikaze_until]";

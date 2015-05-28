@@ -7,21 +7,24 @@ function eachlevelcont ( $prebuf, $contray )
   foreach ( $contray as $contnum => $contdat )
   {
     // Find the Link to the Destination
-    $destilink = $contdat["link"];
-    if ( ! ( $contdat["pubyet"] ) )
+    $linkos = isset($contdat["link"]);
+    if ( $linkos )
     {
-      $destilink = $GLOBALS["locos_ourlink"];
-      $venisa = explode(" ",$contdat["pubrdate"]);
-      $venisb = explode("-",$venisa[0]);
-      
-      $destilink .= "/" . $venisb[0];
-      $destilink .= "/" . $venisb[1];
-      $destilink .= "/" . $venisb[2];
-      $destilink .= "/" . $contdat["postname"] . "/";
+      $destilink = $contdat["link"];
+      if ( ! ( $contdat["pubyet"] ) )
+      {
+        $destilink = $GLOBALS["locos_ourlink"];
+        $venisa = explode(" ",$contdat["pubrdate"]);
+        $venisb = explode("-",$venisa[0]);
+        
+        $destilink .= "/" . $venisb[0];
+        $destilink .= "/" . $venisb[1];
+        $destilink .= "/" . $venisb[2];
+        $destilink .= "/" . $contdat["postname"] . "/";
+      }
     }
     
     $futuro = ( ! ( $contdat["anypub"] ) );
-    $linkos = isset($contdat["link"]);
     if ( $futuro )
     {
       $reto .= "[storikaze_at from = \"";
@@ -29,23 +32,35 @@ function eachlevelcont ( $prebuf, $contray )
       $reto .= "\"]";
       amongalltime($contdat["pubdate"]);
     }
-    if ( $contdat["lvidn"] > 1.5 ) { $reto .= "\n"; }
-    if ( $contdat["lvidn"] > 0.5 ) { $reto .= "<b>"; }
     
-    $reto .= $prebuf;
-    if ( $linkos ) { $reto .= "<a href = \"" . $destilink . "\">"; }
     
-    $reto .= $contdat["denom"];
-    $reto .= " " . htmlspecialchars($contnum);
+    
+    
+    
+    $texorder = array(
+      "haslink" => $linkos,
+      "contnum" => $contnum,
+      "tset" => $contdat["tset"],
+    );
     if ( $contdat["tset"] )
     {
-      $reto .= ": " . htmlspecialchars($contdat["titl"]);
+      $texorder["titl"] = $contdat["titl"];
     }
-    
-    if ( $linkos ) { $reto .= "</a>"; }
-    
-    if ( $contdat["lvidn"] > 0.5 ) { $reto .= "</b>"; }
-    $reto .= "\n";
+    if ( $linkos )
+    {
+      $texorder["link"] = $destilink;
+    }
+    $levidon = $contdat["lvidn"];
+    $leviway = $GLOBALS["cont_levels"][$levidon][2];
+    $notyetway = true;
+    if ( $notyetway )
+    {
+      if ( $leviway[0] == "f" )
+      {
+        $levifun = $leviway[1];
+        $reto .= $levifun($texorder);
+      }
+    }
     
     if ( $futuro )
     {

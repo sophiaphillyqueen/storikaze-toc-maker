@@ -41,10 +41,10 @@ $viar = array();
 
 
 $cont_levels = array(
-  array("Episode",1),
-  array("Chapter",1),
-  array("Part",1),
-  array("Volume",1)
+  array("Episode",1,array("f","form_episode")),
+  array("Chapter",1,array("f","form_chapter")),
+  array("Part",1,array("f","form_part")),
+  array("Volume",1,array("f","form_volume"))
 );
 
 ?>
