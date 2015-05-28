@@ -66,6 +66,9 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
   if ( count($newlocbar) < 0.5 )
   {
     $curta["link"] = $xtrinfo["link"];
+    $curta["pubrdate"] = $xtrinfo["pubrdate"];
+    $curta["postname"] = $xtrinfo["postname"];
+    $curta["pubyet"] = $xtrinfo["pubyet"];
     
     $table_old[$whichnum] = $curta;
     return $table_old;

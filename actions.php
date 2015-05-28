@@ -5,6 +5,12 @@ $cont_max_level = count($cont_levels);
 
 $cont_table = array();
 
+$locos_flags = array(
+  "item" => false,
+  "ourlink" => false
+);
+$locos_ourlink = "";
+
 
 
 if ( ! is_string($kolar["source"]) )
@@ -48,7 +54,7 @@ foreach ( $alltimes as $allgea )
   echo $allgea;
   $previa = true;
 }
-echo "[/storikaze_until]!!</p>\n\n";
+echo "[/storikaze_until]!!!</p>\n\n";
 
 
 ?>

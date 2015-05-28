@@ -12,7 +12,7 @@ function process_item ( ) {
   
   
   
-  echo "\n---gl viar---\n"; var_dump($GLOBALS["viar"]); sleep(1);
+  //echo "\n---gl viar---\n"; var_dump($GLOBALS["viar"]); // sleep(1);
   
   $conto = $GLOBALS["viar"]["content"]["cont"];
   $inform = extract_info($conto);
@@ -33,12 +33,11 @@ function process_item ( ) {
   
   $specinfo = array(
     "pubyet" => ( $GLOBALS["viar"]["status"]["cont"] == "publish" ),
-    "pubdate" => time_adjust_set($GLOBALS["viar"]["postdate"]["cont"]),
-    "link" => $GLOBALS["viar"]["link"]["cont"]
+    "pubdate" => time_adjust_set($GLOBALS["viar"]["postdate"]["cont"]), // Actual TOC herald time
+    "pubrdate" => $GLOBALS["viar"]["postdate"]["cont"], // May be needed for permalinking
+    "link" => $GLOBALS["viar"]["link"]["cont"],
+    "postname" => $GLOBALS["viar"]["postcname"]["cont"], // May also be needed for permalinking
   );
-  
-  // Let us form ourselves the permalink if need-be:
-  
   
   
   foreach ( $infolins as $infoline )
@@ -71,12 +70,12 @@ function process_item ( ) {
   
   $GLOBALS["cont_table"] = acknowledge($GLOBALS["cont_table"],$infostruct,$specinfo);
   
-  echo "\n---newlocbar---\n"; var_dump($infostruct); sleep(1);
-  echo "\n---xtrinfo---\n"; var_dump($specinfo); sleep(1);
-  echo "\n---CONT---\n"; var_dump($GLOBALS["cont_table"]); sleep(1);
+  echo "\n---newlocbar---\n"; var_dump($infostruct); // sleep(1);
+  echo "\n---xtrinfo---\n"; var_dump($specinfo); // sleep(1);
+  echo "\n---CONT---\n"; var_dump($GLOBALS["cont_table"]); // sleep(1);
   
   
-  //var_dump($infostruct); sleep(3);
+  //var_dump($infostruct); // sleep(3);
 }
 
 ?>
