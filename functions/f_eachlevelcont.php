@@ -13,6 +13,7 @@ function eachlevelcont ( $prebuf, $contray )
       $reto .= "[storikaze_at from = \"";
       $reto .= $contdat["pubdate"];
       $reto .= "\"]";
+      amongalltime($contdat["pubdate"]);
     }
     if ( $contdat["lvidn"] > 1.5 ) { $reto .= "\n"; }
     if ( $contdat["lvidn"] > 0.5 ) { $reto .= "<b>"; }

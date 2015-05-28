@@ -31,7 +31,8 @@ $segmenmean = array(
   "PUBDATE" => "showdate",
   "WP:POST_TYPE" => "posttype",
   "WP:STATUS" => "status",
-  "WP:POST_DATE" => "postdate"
+  "WP:POST_DATE" => "postdate",
+  "WP:POST_NAME" => "postcname"
 );
 
 // The following array contains flow data for knowing where

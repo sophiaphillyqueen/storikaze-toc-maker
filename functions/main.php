@@ -4,29 +4,10 @@
 require_once(dirname(__FILE__) . "/f_time_adjust_set.php");
 require_once(dirname(__FILE__) . "/f_acknowledge.php");
 require_once(dirname(__FILE__) . "/f_eachlevelcont.php");
+require_once(dirname(__FILE__) . "/f_amongalltime.php");
+require_once(dirname(__FILE__) . "/f_so_in.php");
 
 
-function so_in($la,$ti,$da) {
-  // Let us set the immediate clear if we are entering an ITEM field:
-  if ( $ti == "ITEM" )
-  {
-    $coros = array("cont" => "", "stat" => false);
-    foreach ( $GLOBALS["segmenmean"] as $numos => $valus )
-    {
-      $GLOBALS["viar"][$valus] = $coros;
-    }
-    return;
-  }
-  
-  foreach ( $GLOBALS["segmenmean"] as $nomo => $vula )
-  {
-    if ( $ti == $nomo )
-    {
-      switch_on($vula);
-      return;
-    }
-  }
-}
 
 function so_out($la,$ti) {
   if ( $ti == "ITEM" )

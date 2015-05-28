@@ -34,11 +34,21 @@ fclose($infile);
 
 
 
-
+$alltimes = array();
 
 
 
 echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
+
+echo "<p>Check back for the next installment in [storikaze_until]";
+$previa = false;
+foreach ( $alltimes as $allgea )
+{
+  if ( $previa ) { echo "/"; }
+  echo $allgea;
+  $previa = true;
+}
+echo "[/storikaze_until]!!</p>\n\n";
 
 
 ?>

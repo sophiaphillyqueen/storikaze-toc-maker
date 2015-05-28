@@ -10,6 +10,10 @@ function process_item ( ) {
   echo time_adjust_set($GLOBALS["viar"]["postdate"]["cont"]) . "\n";
   echo $GLOBALS["viar"]["status"]["cont"] . "\n";
   
+  
+  
+  echo "\n---gl viar---\n"; var_dump($GLOBALS["viar"]); sleep(1);
+  
   $conto = $GLOBALS["viar"]["content"]["cont"];
   $inform = extract_info($conto);
   #echo $inform . "\n";
@@ -32,6 +36,9 @@ function process_item ( ) {
     "pubdate" => time_adjust_set($GLOBALS["viar"]["postdate"]["cont"]),
     "link" => $GLOBALS["viar"]["link"]["cont"]
   );
+  
+  // Let us form ourselves the permalink if need-be:
+  
   
   
   foreach ( $infolins as $infoline )
@@ -64,9 +71,9 @@ function process_item ( ) {
   
   $GLOBALS["cont_table"] = acknowledge($GLOBALS["cont_table"],$infostruct,$specinfo);
   
-  echo "\n---newlocbar---\n"; var_dump($infostruct); // sleep(1);
-  echo "\n---xtrinfo---\n"; var_dump($specinfo); // sleep(1);
-  echo "\n---CONT---\n"; var_dump($GLOBALS["cont_table"]); // sleep(1);
+  echo "\n---newlocbar---\n"; var_dump($infostruct); sleep(1);
+  echo "\n---xtrinfo---\n"; var_dump($specinfo); sleep(1);
+  echo "\n---CONT---\n"; var_dump($GLOBALS["cont_table"]); sleep(1);
   
   
   //var_dump($infostruct); sleep(3);
