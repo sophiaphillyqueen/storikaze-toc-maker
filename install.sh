@@ -4,6 +4,7 @@ fildesnom="storikaze-toc-maker"
 cd "$(dirname "${0}")" || exit
 curdirec="$(pwd)"
 
+
 rm -rf tmp
 mkdir -p tmp
 (
@@ -17,6 +18,10 @@ chmod 755 tmp/${fildesnom}
 perl -c tmp/${fildesnom} || exit 2
 
 destina="${HOME}/bin"
+# Allow overriding of default:
+if [ -f "ins-opt-code/dir-of-install.txt" ]; then
+  destina="$(cat ins-opt-code/dir-of-install.txt)"
+fi
 
 cp "tmp/${fildesnom}" "${destina}/."
 chmod 755 "${destina}/${fildesnom}"
