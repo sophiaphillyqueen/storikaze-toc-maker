@@ -6,16 +6,9 @@ function form_volume ( $ordr )
   if ( $GLOBALS["dispdata"]["onyet"] ) { $reto .= "\n"; }
   $GLOBALS["dispdata"]["onyet"] = true;
   
-  // Is there a reason to stick around for printing the volume header?
-  $nobother = true;
-  if ( $ordr["haslink"] ) { $nobother = false; }
-  if ( $ordr["tset"] ) { $nobother = false; }
-  
-  // Later, I will add presence of multiple volumes as a reason to
-  // bother printing the volume header.
-  // Now, if no reason to print the volume header is found, then don't
-  // bother.
-  if ( $nobother ) { return $reto; }
+  // The volume-label will always be displayed
+  // (except in later versions in cases where the
+  // hierarchy does not go that far up).
   
   
   if ( $ordr["haslink"] )

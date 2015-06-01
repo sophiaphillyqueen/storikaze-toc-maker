@@ -38,6 +38,13 @@ sub yet {
   return ( $lc_a > 0.5 );
 }
 
+sub remo {
+  my @lc_tua;
+  @lc_tua = @argbuft;
+  @argbuft = ();
+  return @lc_tua;
+}
+
 
 
 1;
