@@ -58,7 +58,18 @@ function process_item ( ) {
           return;
         }
         
-        $infostruct[$mathlevel]["num"] = $infosegs[2];
+        
+        // This previous form did not allow the safety
+        // semicolon:
+        //$infostruct[$mathlevel]["num"] = $infosegs[2];
+        
+        // But maybe this new form will
+        $intrameda = explode(";",$infosegs[2]);
+        $infostruct[$mathlevel]["num"] = $intrameda[0];
+        
+        
+        
+        
         if ( $infosegs[3] )
         {
           $infostruct[$mathlevel]["titl"] = $infosegs[3];

@@ -1,8 +1,20 @@
 
-fildesnom="storikaze-toc-maker"
 
 cd "$(dirname "${0}")" || exit
 curdirec="$(pwd)"
+
+if [ -f "proj-info/proj-name.txt" ]; then
+  fildesnom="$(cat "proj-info/proj-name.txt")"
+  echo "Project Identified: ${fildesnom}:"
+else
+  (
+    echo
+    echo PROJECT NAME NOT FOUND
+    pwd
+    echo
+  ) > /dev/stderr
+  exit 3
+fi
 
 
 rm -rf tmp
