@@ -38,3 +38,7 @@ fi
 cp "tmp/${fildesnom}" "${destina}/."
 chmod 755 "${destina}/${fildesnom}"
 
+if [ -f "after-install.sh" ]; then
+  exec sh after-install.sh
+fi
+
