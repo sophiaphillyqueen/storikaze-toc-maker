@@ -11,6 +11,7 @@ require_once(dirname(__FILE__) . "/f_so_mid.php");
 require_once(dirname(__FILE__) . "/f_switch_on.php");
 require_once(dirname(__FILE__) . "/f_switch_off.php");
 require_once(dirname(__FILE__) . "/f_condapnos.php");
+require_once(dirname(__FILE__) . "/f_taglistero.php");
 
 require_once(dirname(__FILE__) . "/f_form_volume.php");
 require_once(dirname(__FILE__) . "/f_form_part.php");

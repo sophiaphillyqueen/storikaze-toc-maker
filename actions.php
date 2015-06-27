@@ -43,6 +43,10 @@ fclose($infile);
 $alltimes = array();
 
 
+echo "\n\n" . '# TABLE OF CONTENTS:
+# The following section of code is meant to be copy/pasted
+# onto the page that is used as the Table of Contents.';
+
 $dispdata = array();
 echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
 
@@ -55,6 +59,21 @@ foreach ( $alltimes as $allgea )
   $previa = true;
 }
 echo "[/storikaze_until]!!!</p>\n\n";
+
+
+// Now let us generate a tag list for the first section
+// of the soon-to-be-implemented [storikaze_history]
+// shortcode.
+echo "\n\n" . '# HISTORY TAGS:
+# Now comes the history tag list. The tags here will go
+# inside the content of a [storikaze_history] shortcode
+# -- specifically the *first* part of it\'s content
+# (separated from the rest of the content by the content\'s
+# first vertical bar (\'|\')).';
+
+
+echo "\n\n" . taglistero_a($cont_table);
+echo "\n\n";
 
 
 ?>

@@ -37,6 +37,7 @@ function process_item ( ) {
     "pubrdate" => $GLOBALS["viar"]["postdate"]["cont"], // May be needed for permalinking
     "link" => $GLOBALS["viar"]["link"]["cont"],
     "postname" => $GLOBALS["viar"]["postcname"]["cont"], // May also be needed for permalinking
+    "postidn_a" => $GLOBALS["viar"]["postidnum"]["cont"], // May be needed for shortcode referencing
   );
   
   

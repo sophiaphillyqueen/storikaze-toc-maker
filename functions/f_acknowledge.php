@@ -67,6 +67,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
   {
     $curta["link"] = $xtrinfo["link"];
     $curta["pubrdate"] = $xtrinfo["pubrdate"];
+    $curta["postidn"] = $xtrinfo["postidn_a"];
     $curta["postname"] = $xtrinfo["postname"];
     $curta["pubyet"] = $xtrinfo["pubyet"];
     

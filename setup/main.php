@@ -32,7 +32,8 @@ $segmenmean = array(
   "WP:POST_TYPE" => "posttype",
   "WP:STATUS" => "status",
   "WP:POST_DATE" => "postdate",
-  "WP:POST_NAME" => "postcname"
+  "WP:POST_NAME" => "postcname",
+  "WP:POST_ID" => "postidnum"
 );
 
 // The following array contains flow data for knowing where
