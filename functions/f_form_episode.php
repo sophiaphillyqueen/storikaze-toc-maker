@@ -18,6 +18,7 @@ function form_episode ( $ordr )
   {
     $reto .= "</a>";
   }
+  $reto .= " <i>(" . htmlspecialchars($ordr["pubdate"]) . ")</i>";
   $reto .= "\n";
   return $reto;
 }

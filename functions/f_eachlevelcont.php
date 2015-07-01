@@ -41,6 +41,7 @@ function eachlevelcont ( $prebuf, $contray )
       "haslink" => $linkos,
       "contnum" => $contnum,
       "tset" => $contdat["tset"],
+      "pubdate" => strftime("%A, %B %e, %Y",strtotime($contdat["pubdate"])),
     );
     if ( $contdat["tset"] )
     {
