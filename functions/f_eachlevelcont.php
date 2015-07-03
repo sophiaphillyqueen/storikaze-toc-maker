@@ -51,6 +51,10 @@ function eachlevelcont ( $prebuf, $contray )
     {
       $texorder["link"] = $destilink;
     }
+    if ( $contdat["lvidn"] < 0.5 )
+    {
+      $texorder["link"] = "{{plink:" . $contdat["postidn"] . "}}";
+    }
     $levidon = $contdat["lvidn"];
     $leviway = $GLOBALS["cont_levels"][$levidon][2];
     $notyetway = true;
