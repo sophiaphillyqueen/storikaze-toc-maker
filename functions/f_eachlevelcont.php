@@ -13,14 +13,15 @@ function eachlevelcont ( $prebuf, $contray )
       $destilink = $contdat["link"];
       if ( ! ( $contdat["pubyet"] ) )
       {
-        $destilink = $GLOBALS["locos_ourlink"];
-        $venisa = explode(" ",$contdat["pubrdate"]);
-        $venisb = explode("-",$venisa[0]);
+        //$destilink = $GLOBALS["locos_ourlink"];
+        //$venisa = explode(" ",$contdat["pubrdate"]);
+        //$venisb = explode("-",$venisa[0]);
         
-        $destilink .= "/" . $venisb[0];
-        $destilink .= "/" . $venisb[1];
-        $destilink .= "/" . $venisb[2];
-        $destilink .= "/" . $contdat["postname"] . "/";
+        //$destilink .= "/" . $venisb[0];
+        //$destilink .= "/" . $venisb[1];
+        //$destilink .= "/" . $venisb[2];
+        //$destilink .= "/" . $contdat["postname"] . "/";
+        $destilink = "{{plink:" . $contdat["postidn"] . "}}";
       }
     }
     
@@ -50,10 +51,6 @@ function eachlevelcont ( $prebuf, $contray )
     if ( $linkos )
     {
       $texorder["link"] = $destilink;
-    }
-    if ( $contdat["lvidn"] < 0.5 )
-    {
-      $texorder["link"] = "{{plink:" . $contdat["postidn"] . "}}";
     }
     $levidon = $contdat["lvidn"];
     $leviway = $GLOBALS["cont_levels"][$levidon][2];
