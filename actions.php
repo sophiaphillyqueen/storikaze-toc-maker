@@ -40,17 +40,6 @@ fclose($infile);
 
 
 
-$alltimes = array();
-
-
-echo "\n\n" . '# TABLE OF CONTENTS:
-# The following section of code is meant to be copy/pasted
-# onto the page that is used as the Table of Contents.';
-
-$dispdata = array();
-echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
-
-echo "\n\n";
 
 
 // Now let us generate a tag list for the first section
@@ -65,6 +54,24 @@ echo "\n\n" . '# HISTORY TAGS:
 
 
 echo "\n\n" . taglistero_a($cont_table);
+echo "\n\n";
+
+
+
+
+
+$alltimes = array();
+
+echo "\n\n" . '# TABLE OF CONTENTS:
+# The following section of code is meant to be copy/pasted
+# onto the page that is used as the Table of Contents.';
+
+$dispdata = array();
+echo "\n\n" . eachlevelcont("",$cont_table) . "\n\n";
+
+
+
+
 echo "\n\n";
 
 
