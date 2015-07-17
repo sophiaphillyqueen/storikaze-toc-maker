@@ -4,8 +4,11 @@
 function eachlevelcont ( $prebuf, $contray )
 {
   $reto = "";
-  foreach ( $contray as $contnum => $contdat )
+  //foreach ( $contray as $contnum => $contdat )
+  foreach ( $contray as $contdat )
   {
+    $contnum = $contdat["partno"];
+    
     // Find the Link to the Destination
     $linkos = isset($contdat["link"]);
     if ( $linkos )

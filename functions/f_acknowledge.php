@@ -6,11 +6,12 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
   
   // First - we get the structure of what we are referring to.
   $thislevel = array_pop($newlocbar);
-  $whichnum = $thislevel["num"];
+  $whichnum = ((int)(($thislevel["num"]) + 0.2));
+  $whichinx = "nm" . $whichnum;
   
-  if ( ! isset($table_old[$whichnum]) )
+  if ( ! isset($table_old[$whichinx]) )
   {
-    $table_old[$whichnum] = array(
+    $table_old[$whichinx] = array(
       "denom" => $thislevel["denom"],
       
       // By default - the title is not set.
@@ -33,7 +34,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
       
     );
   }
-  $curta = $table_old[$whichnum];
+  $curta = $table_old[$whichinx];
   
   // Let us see if we have an earlier date than previously thought.
   if ( strtotime($curta["pubdate"]) > strtotime($xtrinfo["pubdate"]) )
@@ -72,7 +73,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
     $curta["pubyet"] = $xtrinfo["pubyet"];
     
     $curta["partno"] = $whichnum;
-    $table_old[$whichnum] = $curta;
+    $table_old[$whichinx] = $curta;
     return $table_old;
   }
   
@@ -82,7 +83,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
   $curta["cont"] = acknowledge ( $curta["cont"], $newlocbar, $xtrinfo );
   
   $curta["partno"] = $whichnum;
-  $table_old[$whichnum] = $curta;
+  $table_old[$whichinx] = $curta;
   return $table_old;
 }
 
