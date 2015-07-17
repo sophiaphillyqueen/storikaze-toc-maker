@@ -71,6 +71,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
     $curta["postname"] = $xtrinfo["postname"];
     $curta["pubyet"] = $xtrinfo["pubyet"];
     
+    $curta["partno"] = $whichnum;
     $table_old[$whichnum] = $curta;
     return $table_old;
   }
@@ -80,6 +81,7 @@ function acknowledge ( $table_old, $newlocbar, $xtrinfo )
   if ( ! isset($curta["cont"]) ) { $curta["cont"] = array(); }
   $curta["cont"] = acknowledge ( $curta["cont"], $newlocbar, $xtrinfo );
   
+  $curta["partno"] = $whichnum;
   $table_old[$whichnum] = $curta;
   return $table_old;
 }
