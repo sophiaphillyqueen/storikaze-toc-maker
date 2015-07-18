@@ -40,7 +40,7 @@ fclose($infile);
 
 
 
-
+$cont_table = sort_tree_aa($cont_table);
 
 // Now let us generate a tag list for the first section
 // of the soon-to-be-implemented [storikaze_history]

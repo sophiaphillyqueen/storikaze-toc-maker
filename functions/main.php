@@ -18,6 +18,10 @@ require_once(dirname(__FILE__) . "/f_form_part.php");
 require_once(dirname(__FILE__) . "/f_form_chapter.php");
 require_once(dirname(__FILE__) . "/f_form_episode.php");
 
+# Introduced for Sorting the $cont_table tree:
+require_once(dirname(__FILE__) . "/f_sort_tree_aa.php");
+require_once(dirname(__FILE__) . "/f_sort_tree_ab.php");
+
 // -----
 
 require_once(dirname(__FILE__) . "/f_process_item.php");
