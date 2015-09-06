@@ -9,7 +9,7 @@ function form_part ( $ordr )
   {
     $reto .= "<a href = \"" . $ordr["link"] . "\">";
   }
-  $reto .= "Adventure #" . $ordr["contnum"];
+  $reto .= "Part " . $ordr["contnum"];
   if ( $ordr["tset"] )
   {
     $reto .= ": <b>" . htmlspecialchars($ordr["titl"]) . "</b>";
