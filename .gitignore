@@ -1,3 +1,4 @@
-targets
-tmp
-ins-opt-code
+/targets
+/tmp
+/ins-opt-code
+/build
